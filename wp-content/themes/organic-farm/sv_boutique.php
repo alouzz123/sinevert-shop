@@ -1,6 +1,7 @@
 <?php
-/* 
-Template name: Boutique
-*/
+/*
+ Template name: Boutique */
 get_header();
-?>
+ ?>
+
+ 
