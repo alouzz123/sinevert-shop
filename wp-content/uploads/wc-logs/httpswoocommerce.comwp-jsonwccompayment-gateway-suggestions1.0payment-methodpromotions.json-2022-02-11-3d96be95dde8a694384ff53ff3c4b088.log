@@ -1,0 +1,22 @@
+2022-02-11T11:18:22+00:00 ERROR Error getting data feed
+2022-02-11T11:18:22+00:00 ERROR WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => cURL error 56: OpenSSL SSL_read: Connection was reset, errno 10054
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+    [additional_data:protected] => Array
+        (
+        )
+
+)
+
