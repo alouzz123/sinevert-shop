@@ -4,16 +4,16 @@ Theme URI: https://www.ovationthemes.com/wordpress/free-organic-wordpress-theme/
 Author: pewilliams
 Author URI: https://www.ovationthemes.com/
 Description: Organic Farm is ideal for environment website, like a website for ecology preserving movement, Green Earth organization, any sort of organic life project, animals saving fundraiser. Also, suitable for naturopathy, natural and organic medicinal herbs, organic juice stall, Organic compound, organic vegetable farming, organic vegetable wholesaler, grocery store, supermarket, organic shop herbal tea, Organic Health Supplements, Organic Body & Skincare Products, exotic fruits, organic tea, organic products and food, Organic Vegetable Seeds, Organic Fruits Grower, medicines, pharmacy, animal feed, Organic meat, dairy, eggs, Organic Health Supplements, Organic Farming, Organic Kitchen Garden, Organic Snack Bar, Organic Homemade Fertilizer, agricultural products, agri based foods, food packaging industry, nature conservation, environmental naturo eco social group websites and other types of nature related websites. This multipurpose theme has a minimal and elegant design which everybody likes. You get ample of customization and personalization options with this theme. It has optimized codes which is the reason of faster page load times. The responsive layout fits in all devices screens. Based on bootstrap framework which makes it run smoothly. You have the option of adding shortcodes to increase the functionality of your website. Also, it is SEO – friendly to help your website rank easily on search engines.
-Version: 0.4.3
+Version: 0.4.7
 Requires at least: 5.0
-Tested up to: 5.8
+Tested up to: 5.9
 Requires PHP: 7.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: organic-farm
 Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, full-width-template, sticky-post, block-styles, custom-colors, custom-background, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, threaded-comments, theme-options, wide-blocks, blog, food-and-drink, e-commerce
 
-Organic Farm WordPress Theme, Copyright 2020 pewilliams
+Organic Farm WordPress Theme, Copyright 2022 pewilliams
 Organic Farm is distributed under the terms of the GNU GPL
 */
 
@@ -139,7 +139,7 @@ textarea {
 	line-height: 60px;
 	padding: 4px 12px 0 0;
 }
-.entry-content p a,
+.entry-content a,
 .woocommerce-product-details__short-description a,
 #product-box p a{
   text-decoration: underline;
@@ -295,7 +295,6 @@ input[type="submit"].secondary {
 	color: #222;
 }
 
-button:hover,
 button:focus,
 input[type="button"]:hover,
 input[type="button"]:focus,
@@ -466,6 +465,16 @@ a:active {
 .quote-btn {
   background-image: linear-gradient(to right, #16a412 , #28bc36);
   border-radius: 30px;
+}
+.quote-btn:hover{
+	background: #000;
+	color: #fff;
+}
+nav.woocommerce-MyAccount-navigation ul li:hover{
+	background: #000;
+}
+.site-info p:hover, .site-info a:hover{
+	color: #1fb125 !important;
 }
 .quote-btn a {
   color: #fff;
@@ -809,6 +818,62 @@ span.woocommerce-input-wrapper{
 }
 .woocommerce a.checkout-button.button.alt.wc-forward:hover{
 	text-decoration: none !important;
+}
+
+/*------------Scroll-Top------------------*/
+.scrollup {
+    position: fixed;
+    top: 0;
+    right: 25px;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    padding: 0;
+    font-size: 20px;
+    outline: none;
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, .2);
+    -webkit-transition: .9s;
+    transition: .9s;
+    z-index: 99;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.scrollup i {
+    display: inline-block;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+.scrollup.is-active {
+    top: 98%;
+    -webkit-transform: translateY(-98%);
+    transform: translateY(-98%);
+    opacity: 1;
+    visibility: visible;
+}
+
+.scrollup.is-active:hover,
+.scrollup.is-active:focus {
+    color: #000;
+    transform: translateY(-98%) rotate(-45deg);
+    -webkit-transform: translateY(-98%) rotate(-45deg);
+    -moz-transform: translateY(-98%) rotate(-45deg);
+    -o-transform: translateY(-98%) rotate(-45deg);
+    -ms-transform: translateY(-98%) rotate(-45deg);
+}
+
+.scrollup.is-active:hover i,
+.scrollup.is-active:focus i {
+    transform: translateY(0) rotate(45deg);
+    -webkit-transform: translateY(0) rotate(45deg);
+    -moz-transform: translateY(0) rotate(45deg);
+    -o-transform: translateY(0) rotate(45deg);
+    -ms-transform: translateY(0) rotate(45deg);
 }
 
 /*-------- Posts ----------------*/
@@ -1507,6 +1572,11 @@ video {
 	}
 	.nav-links .nav-next .nav-title .nav-title-icon-wrapper {
 		right: -2em;
+	}
+}
+@media screen and ( max-width: 767px){
+	.scroll-top{
+		display: none;
 	}
 }
 @media screen and ( max-width: 768px){

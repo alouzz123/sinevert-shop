@@ -13,7 +13,12 @@
 				<?php get_template_part( 'template-parts/footer/footer', 'widgets' ); ?>			
 			</div>
 		</div>
-		<?php get_template_part( 'template-parts/footer/site', 'info' ); ?> 
+		<?php get_template_part( 'template-parts/footer/site', 'info' ); ?>
+		<?php if( get_theme_mod( 'organic_farm_scroll_enable',true) != '') { ?>
+		<div class="scroll-top">
+		<button type=button id="organic-farm-scroll-to-top" class="scrollup"><i class="fas fa-chevron-up"></i></button>
+		</div>	
+		<?php }?> 
 	</footer>
 <?php wp_footer(); ?>
 

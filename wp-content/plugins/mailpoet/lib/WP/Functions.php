@@ -320,6 +320,10 @@ class Functions {
     return get_user_by($field, $value);
   }
 
+  public function hasAction($tag, $functionToCheck = false) {
+    return has_action($tag, $functionToCheck);
+  }
+
   public function hasFilter($tag, $functionToCheck = false) {
     return has_filter($tag, $functionToCheck);
   }
@@ -433,6 +437,14 @@ class Functions {
     return get_transient($transient);
   }
 
+  public function setSiteTransient($transient, $value, $expiration = 0) {
+    return set_site_transient($transient, $value, $expiration);
+  }
+
+  public function getSiteTransient($transient) {
+    return get_site_transient($transient);
+  }
+
   public function deleteTransient($transient) {
     return delete_transient($transient);
   }
@@ -510,6 +522,10 @@ class Functions {
     return register_block_type($name, $args);
   }
 
+  public function registerBlockTypeFromMetadata($name, $args = []) {
+    return register_block_type_from_metadata($name, $args);
+  }
+
   public function wpGetAttachmentImageSrc($attachmentId, $size = 'thumbnail', $icon = false) {
     return wp_get_attachment_image_src($attachmentId, $size, $icon);
   }
@@ -558,7 +574,7 @@ class Functions {
     return wp_parse_url($url, $component);
   }
 
-  public function wpSpecialcharsDecode($string, $quoteStyle = ENT_NOQUOTES ) {
+  public function wpSpecialcharsDecode($string, $quoteStyle = ENT_NOQUOTES) {
     return wp_specialchars_decode($string, $quoteStyle);
   }
 
@@ -746,5 +762,37 @@ class Functions {
 
   public function wpGetImageEditor(string $path, $args = []) {
     return wp_get_image_editor($path, $args);
+  }
+
+  public function wpRegisterScript(string $handle, $src, $deps = [], $ver = false, $in_footer = false): bool {
+    return wp_register_script($handle, $src, $deps, $ver, $in_footer);
+  }
+
+  public function wpSetScriptTranslations(string $handle, string $domain = 'default', string $path = null): bool {
+    return wp_set_script_translations($handle, $domain, $path);
+  }
+
+  /**
+   * @return \WP_Scripts
+   */
+  public function getWpScripts() {
+    return wp_scripts();
+  }
+
+  /** @param string[]|null $protocols */
+  public function escUrlRaw(string $url, array $protocols = null): string {
+    return esc_url_raw($url, $protocols);
+  }
+
+  public function restUrl(string $path = '', string $scheme = 'rest'): string {
+    return rest_url($path, $scheme);
+  }
+
+  public function wpGetInstalledTranslations(string $type): array {
+    return wp_get_installed_translations($type);
+  }
+
+  public function getAvailableLanguages(?string $dir = null): array {
+    return get_available_languages($dir);
   }
 }

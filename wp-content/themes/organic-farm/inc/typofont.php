@@ -80,4 +80,3 @@ function organic_farm_sanitize_fonts( $input ) {
 		return '';
 	}
 }
-?>

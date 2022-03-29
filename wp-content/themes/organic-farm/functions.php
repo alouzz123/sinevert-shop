@@ -45,6 +45,14 @@ function organic_farm_sanitize_checkbox( $input ) {
 	return ( ( isset( $input ) && true == $input ) ? true : false );
 }
 
+function organic_farm_sanitize_number_absint( $number, $setting ) {
+	// Ensure $number is an absolute integer (whole number, zero or greater).
+	$number = absint( $number );
+	
+	// If the input is an absolute integer, return it; otherwise, return the default
+	return ( $number ? $number : $setting->default );
+}
+
 function organic_farm_string_limit_words($string, $word_limit) {
 	$words = explode(' ', $string, ($word_limit + 1));
 	if(count($words) > $word_limit)

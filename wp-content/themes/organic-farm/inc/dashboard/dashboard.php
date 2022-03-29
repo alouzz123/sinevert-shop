@@ -16,9 +16,18 @@ if ( ! defined( 'ORGANIC_FARM_SUPPORT' ) ) {
 if ( ! defined( 'ORGANIC_FARM_REVIEW' ) ) {
 	define('ORGANIC_FARM_REVIEW',__('https://wordpress.org/support/theme/organic-farm/reviews/','organic-farm'));
 }
+if ( ! defined( 'ORGANIC_FARM_LIVE_DEMO' ) ) {
 define('ORGANIC_FARM_LIVE_DEMO',__('https://www.ovationthemes.com/demos/organic-farm/','organic-farm'));
+}
+if ( ! defined( 'ORGANIC_FARM_BUY_PRO' ) ) {
 define('ORGANIC_FARM_BUY_PRO',__('https://www.ovationthemes.com/wordpress/organic-farm-wordpress-theme/','organic-farm'));
+}
+if ( ! defined( 'ORGANIC_FARM_PRO_DOC' ) ) {
 define('ORGANIC_FARM_PRO_DOC',__('https://ovationthemes.com/docs/ot-organic-farm-pro-doc/','organic-farm'));
+}
+if ( ! defined( 'ORGANIC_FARM_THEME_NAME' ) ) {
+define('ORGANIC_FARM_THEME_NAME',__('Premium Organic Theme','organic-farm'));
+}
 
 /**
  * Theme Info Page
@@ -99,7 +108,7 @@ function organic_farm_guide() {
 				</div>
           	</div>
 			<div class="col-md-3">
-				<h3><?php esc_html_e('Premium Organic Theme','organic-farm'); ?></h3>
+				<h3><?php echo esc_html( ORGANIC_FARM_THEME_NAME ); ?></h3>
 				<img class="organic_farm_img_responsive" style="width: 100%;" src="<?php echo esc_url( get_template_directory_uri() ); ?>/screenshot.png">
 				<div class="pro-links">
 					<hr>

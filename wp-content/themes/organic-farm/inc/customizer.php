@@ -18,7 +18,7 @@ function organic_farm_customize_register( $wp_customize ) {
 
 	$wp_customize->add_section( 'organic_farm_typography_settings', array(
 		'title'       => __( 'Typography', 'organic-farm' ),
-		'priority'       => 24,
+		'priority'       => 2,
 	) );
 
 	$font_choices = array(
@@ -98,6 +98,7 @@ function organic_farm_customize_register( $wp_customize ) {
     // Theme General Settings
     $wp_customize->add_section('organic_farm_theme_settings',array(
         'title' => __('Theme General Settings', 'organic-farm'),
+        'priority' => 1,
     ) );
 
     $wp_customize->add_setting( 'organic_farm_sticky_header', array(
@@ -123,6 +124,55 @@ function organic_farm_customize_register( $wp_customize ) {
 		'type'        => 'toggle',
 		'settings'    => 'organic_farm_theme_loader',
 	) ) );
+
+	$wp_customize->add_setting( 'organic_farm_scroll_enable', array(
+		'default'           => true,
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'organic_farm_sanitize_checkbox',
+	) );
+	$wp_customize->add_control( new Organic_Farm_Toggle_Control( $wp_customize, 'organic_farm_scroll_enable', array(
+		'label'       => esc_html__( 'Show Scroll Top', 'organic-farm' ),
+		'section'     => 'organic_farm_theme_settings',
+		'type'        => 'toggle',
+		'settings'    => 'organic_farm_scroll_enable',
+	) ) );
+
+	$wp_customize->add_setting('organic_farm_scroll_options',array(
+        'default' => 'right_align',
+        'sanitize_callback' => 'organic_farm_sanitize_choices'
+	));
+	$wp_customize->add_control('organic_farm_scroll_options',array(
+        'type' => 'select',
+        'label' => __('Scroll Top Alignment','organic-farm'),
+        'section' => 'organic_farm_theme_settings',
+        'choices' => array(
+            'right_align' => __('Right Align','organic-farm'),
+            'center_align' => __('Center Align','organic-farm'),
+            'left_align' => __('Left Align','organic-farm'),
+        ),
+	) );
+
+	//theme width
+
+	$wp_customize->add_section('organic_farm_theme_width_settings',array(
+        'title' => __('Theme Width Option', 'organic-farm'),
+        'priority' => 1,
+    ) );
+
+	$wp_customize->add_setting('organic_farm_width_options',array(
+        'default' => 'full_width',
+        'sanitize_callback' => 'organic_farm_sanitize_choices'
+	));
+	$wp_customize->add_control('organic_farm_width_options',array(
+        'type' => 'select',
+        'label' => __('Theme Width Option','organic-farm'),
+        'section' => 'organic_farm_theme_width_settings',
+        'choices' => array(
+            'full_width' => __('Fullwidth','organic-farm'),
+            'Container' => __('Container','organic-farm'),
+            'container_fluid' => __('Container Fluid','organic-farm'),
+        ),
+	) );
 
 	// Post Layouts
     $wp_customize->add_section('organic_farm_layout',array(
@@ -447,7 +497,7 @@ function organic_farm_customize_register( $wp_customize ) {
 	//Logo
     $wp_customize->add_setting('organic_farm_logo_max_height',array(
 		'default'	=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'organic_farm_sanitize_number_absint'
 	));	
 	$wp_customize->add_control('organic_farm_logo_max_height',array(
 		'label'	=> esc_html__('Logo Width','organic-farm'),

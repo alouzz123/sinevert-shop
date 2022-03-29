@@ -3,8 +3,8 @@ Contributors: pewilliams
 Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, full-width-template, sticky-post, block-styles, custom-colors, custom-background, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, threaded-comments, theme-options, wide-blocks, blog, food-and-drink, e-commerce
 Requires at least: 5.0
 Requires PHP: 7.2
-Tested up to: 5.8
-Stable tag: 0.4.3
+Tested up to: 5.9
+Stable tag: 0.4.7
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -73,14 +73,28 @@ Organic Farm is ideal for environment website, like a website for ecology preser
 	-- Resolved slider issue.
 
 = 0.4.2 =
-	-- Added Documentation
+	-- Added Documentation.
 
 = 0.4.3 =
-	-- Added Typography
+	-- Added Typography.
+
+= 0.4.4 =
+	-- Added Width Settings.
+
+= 0.4.5 =
+	-- Added Scroll Top.
+
+= 0.4.6 =
+	-- Added Scroll Top Alignment Option.
+
+= 0.4.7 =
+	-- Added Hover color CSS.
+	-- Updated PHP version.
+	-- Added sanitization function.
 
 == Resources ==
 
-Organic Farm WordPress Theme, Copyright 2020 pewilliams
+Organic Farm WordPress Theme, Copyright 2022 pewilliams
 Organic Farm is distributed under the terms of the GNU GPL
 
 Organic Farm bundles the following third-party resources:
