@@ -1,0 +1,4 @@
+2022-04-07T12:50:33+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\wamp64\www\sinevert-shop\wp-admin\includes\class-wp-list-table.php on line 1525
+
+2022-04-07T12:50:38+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\wamp64\www\sinevert-shop\wp-content\plugins\woocommerce\includes\wc-template-functions.php on line 13
+
